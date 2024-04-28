@@ -1,7 +1,10 @@
+import './globals.css'
 import type { Metadata } from 'next'
 import { DotGothic16 } from 'next/font/google'
-import './globals.css'
 import Header from '@/components/layout/header'
+import Footer from '@/components/layout/footer'
+import Main from '@/components/layout/main'
+import { cn } from '@/lib/utils'
 
 const font = DotGothic16({ weight: '400', style: 'normal', subsets: ['latin'] })
 
@@ -17,10 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ja'>
-      <body className={font.className}>
+      <body
+        className={cn([`${font.className}`, 'h-full w-full flex flex-col'])}
+      >
         <Header />
-        {children}
-        Fotre
+        <Main>{children}</Main>
+        <Footer />
       </body>
     </html>
   )
