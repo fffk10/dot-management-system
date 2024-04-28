@@ -1,3 +1,3 @@
 export default function Home() {
-  return <main>Dot management system</main>
+  return <div>Dot item management system.</div>
 }

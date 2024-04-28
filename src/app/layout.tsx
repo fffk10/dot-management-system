@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { DotGothic16 } from 'next/font/google'
 import './globals.css'
+import Header from '@/components/layout/header'
 
 const font = DotGothic16({ weight: '400', style: 'normal', subsets: ['latin'] })
 
@@ -15,8 +16,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
-      <body className={font.className}>{children}</body>
+    <html lang='ja'>
+      <body className={font.className}>
+        <Header />
+        {children}
+        Fotre
+      </body>
     </html>
   )
 }
