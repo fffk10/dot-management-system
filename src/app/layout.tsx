@@ -5,6 +5,7 @@ import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 import Main from '@/components/layout/main'
 import { cn } from '@/lib/utils'
+import Sidebar from '@/components/sidebar/sidebar'
 
 const font = DotGothic16({ weight: '400', style: 'normal', subsets: ['latin'] })
 
@@ -24,7 +25,10 @@ export default function RootLayout({
         className={cn([`${font.className}`, 'h-full w-full flex flex-col'])}
       >
         <Header />
-        <Main>{children}</Main>
+        <div className='flex flex-1'>
+          <Sidebar />
+          <Main>{children}</Main>
+        </div>
         <Footer />
       </body>
     </html>
